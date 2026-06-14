@@ -7,56 +7,56 @@ This document explains how the classic **Model-View-Controller (MVC)** architect
 ## Architecture Diagram
 
 ```
-       [ BROWSER ] ◄────────────────────────────────────────────┐
-            │                                                    │
-            ▼                                                    │
-┌───────────────────────────────┐                               │
-│            VIEW               │  React.js SPA                 │ HTTP
-│                               │  (pages/ + components/)       │ JSON
-│  • Home.jsx                   │                               │ Response
-│  • Products.jsx               │                               │
-│  • ProductDetail.jsx          │                               │
-│  • Cart.jsx / Checkout.jsx    │                               │
-│  • Admin/Dashboard.jsx        │                               │
-│  • AuthContext / CartContext   │                               │
-└───────────────┬───────────────┘                               │
-                │                                               │
-                │  Axios HTTP Requests                          │
-                │  POST /api/orders                             │
-                │  GET /api/products?category=Dog+Food          │
-                ▼                                               │
+       [ BROWSER ] ◄───────────────────────────────────────────┐
+            │                                                  │
+            ▼                                                  │
+┌───────────────────────────────┐                              │
+│            VIEW               │  React.js SPA                │ HTTP
+│                               │  (pages/ + components/)      │ JSON
+│  • Home.jsx                   │                              │ Response
+│  • Products.jsx               │                              │
+│  • ProductDetail.jsx          │                              │
+│  • Cart.jsx / Checkout.jsx    │                              │
+│  • Admin/Dashboard.jsx        │                              │
+│  • AuthContext / CartContext  │                              │
+└───────────────┬───────────────┘                              │
+                │                                              │
+                │  Axios HTTP Requests                         │
+                │  POST /api/orders                            │
+                │  GET /api/products?category=Dog+Food         │
+                ▼                                              │
 ┌──────────────────────────────────────────────────────────┐   │
-│                   SERVER (Node.js / Express.js)           │   │
+│                   SERVER (Node.js / Express.js)          │   │
 │                                                          │   │
-│  ┌─────────────────────────────────────────────────┐    │   │
-│  │               ROUTER (routes/*.js)              │    │   │
-│  │                                                 │    │   │
-│  │  authRoutes.js       productRoutes.js           │    │   │
-│  │  cartRoutes.js       orderRoutes.js             │    │   │
-│  │  userRoutes.js       reviewRoutes.js            │    │   │
-│  │  wishlistRoutes.js   adminRoutes.js             │    │   │
-│  └──────────────────────┬──────────────────────────┘   │   │
-│                         │                               │   │
-│                         │  protect()  adminOnly()       │   │
-│                         │  (middleware/auth.js)         │   │
-│                         ▼                               │   │
-│  ┌─────────────────────────────────────────────────┐   │   │
-│  │           CONTROLLER (controllers/*.js)         │   │───┘
-│  │                                                 │   │
-│  │  authController.js   productController.js       │   │
-│  │  cartController.js   orderController.js         │   │
-│  │  userController.js   reviewController.js        │   │
-│  │  wishlistController  adminController.js         │   │
-│  └──────────────────────┬──────────────────────────┘   │
-│                         │                               │
-│                         │  Mongoose queries             │
-│                         ▼                               │
-│  ┌─────────────────────────────────────────────────┐   │
-│  │             MODEL (models/*.js)                 │   │
-│  │                                                 │   │
-│  │  User.js      Product.js     Order.js           │   │
-│  │  Cart.js      Review.js      Admin.js           │   │
-│  └──────────────────────┬──────────────────────────┘   │
+│  ┌─────────────────────────────────────────────────┐     │   │
+│  │               ROUTER (routes/*.js)              │     │   │
+│  │                                                 │     │   │
+│  │  authRoutes.js       productRoutes.js           │     │   │
+│  │  cartRoutes.js       orderRoutes.js             │     │   │
+│  │  userRoutes.js       reviewRoutes.js            │     │   │
+│  │  wishlistRoutes.js   adminRoutes.js             │     │   │
+│  └──────────────────────┬──────────────────────────┘     │   │
+│                         │                                │   │
+│                         │  protect()  adminOnly()        │   │
+│                         │  (middleware/auth.js)          │   │
+│                         ▼                                │   │
+│  ┌─────────────────────────────────────────────────┐     │   │
+│  │           CONTROLLER (controllers/*.js)         │     │───┘
+│  │                                                 │     │
+│  │  authController.js   productController.js       │     │
+│  │  cartController.js   orderController.js         │     │ 
+│  │  userController.js   reviewController.js        │     │
+│  │  wishlistController  adminController.js         │     │
+│  └──────────────────────┬──────────────────────────┘     │
+│                         │                                │
+│                         │  Mongoose queries              │
+│                         ▼                                │
+│  ┌─────────────────────────────────────────────────┐     │
+│  │             MODEL (models/*.js)                 │     │
+│  │                                                 │     │
+│  │  User.js      Product.js     Order.js           │     │
+│  │  Cart.js      Review.js      Admin.js           │     │
+│  └──────────────────────┬──────────────────────────┘     │
 └─────────────────────────┼────────────────────────────────┘
                           │
                           ▼
