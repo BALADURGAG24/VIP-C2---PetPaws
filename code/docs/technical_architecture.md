@@ -188,10 +188,10 @@ NODE_ENV=development
 
 ```
 ┌─────────────────┐       ┌──────────────────────┐       ┌─────────────────┐
-│   Vercel / CDN  │       │  Railway / Render     │       │  MongoDB Atlas  │
-│                 │ HTTPS │                       │       │                 │
-│  React Build    │──────►│  Node.js + Express    │──────►│  Cloud Database │
-│  (Static Files) │       │  (Server Process)     │       │  (Managed)      │
+│   Vercel / CDN  │       │  Railway / Render    │       │  MongoDB Atlas  │
+│                 │ HTTPS │                      │       │                 │
+│  React Build    │──────►│  Node.js + Express   │──────►│  Cloud Database │
+│  (Static Files) │       │  (Server Process)    │       │  (Managed)      │
 └─────────────────┘       └──────────────────────┘       └─────────────────┘
 ```
 
