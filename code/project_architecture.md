@@ -54,20 +54,20 @@ This document serves as the central index for the **PetPaws Pet Foods & Accessor
 ┌──────────────────────────────────────────────────────────────┐
 │                        PetPaws System                        │
 │                                                              │
-│  ┌─────────────────┐        ┌─────────────────────────────┐ │
-│  │   Client Layer  │        │       Server Layer          │ │
-│  │                 │  HTTP  │                             │ │
-│  │  React.js SPA   │◄──────►│  Node.js + Express.js API  │ │
-│  │  (Vite / v18)   │  REST  │  JWT Auth + Middleware      │ │
-│  │  Context API    │        │  Controllers + Routes       │ │
-│  └─────────────────┘        └──────────────┬──────────────┘ │
-│                                            │  Mongoose ODM  │
-│                                            ▼                │
-│                             ┌─────────────────────────────┐ │
-│                             │       MongoDB Database       │ │
-│                             │  Users · Products · Orders  │ │
-│                             │  Cart · Reviews · Settings  │ │
-│                             └─────────────────────────────┘ │
+│  ┌─────────────────┐        ┌─────────────────────────────┐  │
+│  │   Client Layer  │        │       Server Layer          │  │
+│  │                 │  HTTP  │                             │  │
+│  │  React.js SPA   │◄──────►│  Node.js + Express.js API   │  │
+│  │  (Vite / v18)   │  REST  │  JWT Auth + Middleware      │  │
+│  │  Context API    │        │  Controllers + Routes       │  │
+│  └─────────────────┘        └──────────────┬──────────────┘  │
+│                                            │  Mongoose ODM   │
+│                                            ▼                 │
+│                             ┌─────────────────────────────┐  │
+│                             │       MongoDB Database      │  │
+│                             │  Users · Products · Orders  │  │
+│                             │  Cart · Reviews · Settings  │  │
+│                             └─────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────┘
 ```
 
